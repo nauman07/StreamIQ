@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamIQ</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">📈 StreamIQ</div>
+    <div class="nav-status">
+      <span id="ws-status" class="status-dot disconnected"></span>
+      <span id="ws-label">Connecting...</span>
+    </div>
+  </nav>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-val" id="stat-total">—</div><div class="stat-lbl">Total Ticks</div></div>
+    <div class="stat"><div class="stat-val buy" id="stat-buy">—</div><div class="stat-lbl">BUY Signals</div></div>
+    <div class="stat"><div class="stat-val sell" id="stat-sell">—</div><div class="stat-lbl">SELL Signals</div></div>
+    <div class="stat"><div class="stat-val spike" id="stat-spikes">—</div><div class="stat-lbl">Volume Spikes</div></div>
+  </div>
+
+  <!-- SYMBOL TABS -->
+  <div class="symbol-tabs" id="symbol-tabs"></div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-grid">
+
+    <!-- Price Chart -->
+    <div class="card chart-card">
+      <div class="card-header">
+        <span id="chart-title">Price & Moving Averages</span>
+        <span id="current-signal" class="signal-badge">—</span>
+      </div>
+      <canvas id="price-chart"></canvas>
+    </div>
+
+    <!-- RSI Chart -->
+    <div class="card rsi-card">
+      <div class="card-header">RSI (14)</div>
+      <canvas id="rsi-chart"></canvas>
+    </div>
+
+    <!-- Ticker Cards -->
+    <div class="card tickers-card">
+      <div class="card-header">Live Quotes</div>
+      <div id="ticker-list"></div>
+    </div>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
