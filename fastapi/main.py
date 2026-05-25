@@ -204,8 +204,8 @@ class ManualTick(PM):
 @app.post("/inject")
 async def inject_tick(tick: ManualTick, db: AsyncSession = Depends(get_db)):
     """Manually inject a tick — useful when market is closed or yfinance is blocked."""
-    from datetime import datetime, timezone
-    now = datetime.now(timezone.utc)
+    from datetime import datetime
+    now = datetime.utcnow()
 
     await db.execute(text("""
         INSERT INTO market_raw (symbol, ts, open, high, low, close, volume)
