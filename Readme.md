@@ -111,7 +111,7 @@ yfinance (market data)
 
 ### 1. Clone
 ```bash
-git clone https://github.com/yourusername/streamiq.git
+git clone https://github.com/nauman07/streamiq.git
 cd streamiq
 ```
 
